@@ -1,5 +1,5 @@
 import React from "react";
-import { NavigationContainer } from "@react-navigation/native";
+import { DarkTheme, NavigationContainer } from "@react-navigation/native";
 import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
 
 import Ionicons from "react-native-vector-icons/Ionicons";
@@ -10,7 +10,7 @@ const Tab = createMaterialBottomTabNavigator();
 
 export const Navigation = () => {
   return (
-    <NavigationContainer>
+    <NavigationContainer theme={DarkTheme}>
       <Tab.Navigator
         screenOptions={({ route }) => ({
           tabBarIcon: ({ focused }) => {
@@ -19,6 +19,7 @@ export const Navigation = () => {
               <Ionicons
                 name={focused ? icon?.focused : icon?.nonFocused}
                 size={24}
+                color={DarkTheme.colors.text}
               />
             );
           },
