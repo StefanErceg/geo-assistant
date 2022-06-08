@@ -1,0 +1,5 @@
+{
+  "apiUrl": "http://localhost:9000",
+  "newsUrl": "https://newsapi.org/",
+  "newsApiKey": "92df7f2b348346b7a7b68618c7c32f51"
+}
