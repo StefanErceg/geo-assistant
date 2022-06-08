@@ -1,10 +1,20 @@
 import { View, Text } from "react-native";
-import React from "react";
+import React, { FC } from "react";
+import { useTheme, withTheme } from "react-native-paper";
+import { Theme } from "react-native-paper/lib/typescript/types";
+import { stylesheet } from "../../stylesheets";
 
-export default () => {
+interface Props {
+  theme: Theme;
+}
+
+const News: FC<Props> = ({ theme }) => {
+  const { colors } = useTheme();
   return (
-    <View>
-      <Text>News</Text>
+    <View style={stylesheet.page}>
+      <Text style={{ color: colors.text }}>News</Text>
     </View>
   );
 };
+
+export default News;

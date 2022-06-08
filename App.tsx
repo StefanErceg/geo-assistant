@@ -8,8 +8,11 @@ import {
 import { Navigation } from "./src/navigation";
 
 export default function App() {
+  const theme = {
+    ...DarkTheme,
+  };
   return (
-    <PaperProvider theme={DarkTheme}>
+    <PaperProvider theme={theme}>
       <Navigation />
     </PaperProvider>
   );

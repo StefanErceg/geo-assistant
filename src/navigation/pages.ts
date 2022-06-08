@@ -1,8 +1,8 @@
-import { Cities } from "../views/Cities";
-import { General } from "../views/General";
-import { Locations } from "../views/Locations";
+import Cities from "../views/Cities";
+import General from "../views/General";
+import Locations from "../views/Locations";
 import News from "../views/News";
-import { Settings } from "../views/Settings";
+import Settings from "../views/Settings";
 import {
   citiesPage,
   generalPage,
