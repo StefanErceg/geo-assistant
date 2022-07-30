@@ -1,45 +1,109 @@
-import { View, Text, ScrollView } from "react-native";
+import {
+  View,
+  Text,
+  ScrollView,
+  Image,
+  FlatList,
+  ListRenderItemInfo,
+} from "react-native";
 import React, { FC, useEffect, useState } from "react";
-import { useTheme, withTheme } from "react-native-paper";
-import { Theme } from "react-native-paper/lib/typescript/types";
+import { ActivityIndicator, useTheme } from "react-native-paper";
 import { stylesheet } from "../../stylesheets";
 import { news } from "../../api";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { Article } from "./types";
+import { Loader } from "../../components/common/Loader";
 
-interface Props {
-  theme: Theme;
-}
-
-const News: FC<Props> = ({ theme }) => {
+const News: FC = () => {
   const { colors } = useTheme();
-  const [data, setData] = useState<any[]>([]);
+  const [articles, setArticles] = useState<Article[]>([]);
+  const [totalArticles, setTotalArticles] = useState<number | null>(null);
+  const [page, setPage] = useState(0);
+  const [loaded, setLoaded] = useState(false);
+
+  const pageSize = 20;
 
   useEffect(() => {
-    (async () => {
-      try {
-        const { articles } = await news.getTopHeadlines({ country: "rs" });
-        setData(articles);
-      } catch (err) {
-        console.error(err);
-      }
-    })();
+    setPage((page) => page + 1);
   }, []);
+
+  useEffect(() => {
+    loadNews();
+  }, [page]);
+
+  const loadNews = async () => {
+    try {
+      console.log(page);
+      const { articles: data, totalResults } = await news.getTopHeadlines({
+        country: "rs",
+        pageSize,
+        page,
+      });
+      setArticles((articles) => [...articles, ...data]);
+      setTotalArticles(totalResults);
+    } catch (err) {
+      console.error(err);
+    } finally {
+      setLoaded(true);
+    }
+  };
 
   return (
     <SafeAreaView style={stylesheet.container}>
-      <ScrollView>
-        <Text style={{ color: colors.text }}>News</Text>
-        {data?.map((item, index) => {
-          return (
-            <Text
-              style={{ color: colors.text, ...stylesheet.newsItem }}
-              key={index}
-            >
-              {item?.title}
-            </Text>
-          );
-        })}
-      </ScrollView>
+      {loaded ? (
+        // <ScrollView>
+        //   {articles?.map(({ author, title, urlToImage }, index) => {
+        //     const imageSource = urlToImage
+        //       ? { uri: urlToImage }
+        //       : require("./news-placeholder.jpg");
+        //     return (
+        //       <View style={stylesheet.newsItem} key={index}>
+        //         <Image
+        //           source={imageSource}
+        //           style={{ ...stylesheet.newsImage }}
+        //         />
+        //         <Text style={{ color: colors.text, ...stylesheet.newsTitle }}>
+        //           {title}
+        //         </Text>
+        //       </View>
+        //     );
+        //   })}
+        // </ScrollView>
+        <FlatList
+          // contentContainerStyle={{
+          //   flex: 1,
+          //   flexDirection: "column",
+          //   height: "100%",
+          //   width: "100%",
+          // }}
+          data={articles}
+          keyExtractor={(item, index) => index.toString()}
+          renderItem={({
+            item: { author, title, urlToImage },
+            index,
+          }: ListRenderItemInfo<Article>) => {
+            const imageSource = urlToImage
+              ? { uri: urlToImage }
+              : require("./news-placeholder.jpg");
+            return (
+              <View style={stylesheet.newsItem} key={index}>
+                <Image
+                  source={imageSource}
+                  style={{ ...stylesheet.newsImage }}
+                />
+                <Text style={{ color: colors.text, ...stylesheet.newsTitle }}>
+                  {title}
+                </Text>
+              </View>
+            );
+          }}
+          onEndReached={() => setPage((page) => page + 1)}
+          onEndReachedThreshold={0.5}
+          initialNumToRender={10}
+        />
+      ) : (
+        <Loader />
+      )}
     </SafeAreaView>
   );
 };
