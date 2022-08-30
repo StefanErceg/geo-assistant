@@ -1,13 +1,18 @@
-import React from "react";
-import { SafeAreaView, Text, View } from "react-native";
-import { useTheme } from "react-native-paper";
-import { stylesheet } from "../../stylesheets";
+import React from 'react';
+import { ScrollView } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { stylesheet } from '../../stylesheets';
+import { cities } from '../../mock/cities';
+import { City } from './City';
 
 export default () => {
-  const { colors } = useTheme();
-  return (
-    <SafeAreaView style={stylesheet.container}>
-      <Text style={{ color: colors.text }}>Cities</Text>
-    </SafeAreaView>
-  );
+	return (
+		<SafeAreaView style={stylesheet.container}>
+			<ScrollView style={stylesheet.cityList}>
+				{cities?.map((city) => (
+					<City key={city?.id} {...city} />
+				))}
+			</ScrollView>
+		</SafeAreaView>
+	);
 };
