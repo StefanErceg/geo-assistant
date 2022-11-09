@@ -1,34 +1,30 @@
-import React from 'react';
-import { DarkTheme, NavigationContainer } from '@react-navigation/native';
-import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
+import React from "react";
+import { DarkTheme, NavigationContainer } from "@react-navigation/native";
+import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
 
-import Ionicons from 'react-native-vector-icons/Ionicons';
-import { pages } from './pages';
-import { icons } from './icons';
+import Ionicons from "react-native-vector-icons/Ionicons";
+import { pages } from "./pages";
+import { icons } from "./icons";
 
 const Tab = createMaterialBottomTabNavigator();
 
 export const Navigation = () => {
-	return (
-		<NavigationContainer theme={DarkTheme}>
-			<Tab.Navigator
-				screenOptions={({ route }) => ({
-					tabBarIcon: ({ focused }) => {
-						const icon = icons[route?.name];
-						return (
-							<Ionicons
-								name={focused ? icon?.focused : icon?.nonFocused}
-								size={24}
-								color={DarkTheme.colors.text}
-							/>
-						);
-					},
-				})}
-			>
-				{pages?.map((page, index) => (
-					<Tab.Screen key={index} {...page} />
-				))}
-			</Tab.Navigator>
-		</NavigationContainer>
-	);
+  return (
+    <NavigationContainer theme={DarkTheme}>
+      <Tab.Navigator
+        screenOptions={({ route }) => ({
+          tabBarIcon: ({ focused }) => {
+            const icon = icons[route?.name];
+            return (
+              <Ionicons name={focused ? icon?.focused : icon?.nonFocused} size={24} color={DarkTheme.colors.text} />
+            );
+          },
+        })}
+      >
+        {pages?.map((page, index) => (
+          <Tab.Screen key={index} {...page} />
+        ))}
+      </Tab.Navigator>
+    </NavigationContainer>
+  );
 };
