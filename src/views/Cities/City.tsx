@@ -1,12 +1,14 @@
 import React, { FC, useState } from "react";
+import YouTubePlayer from "react-native-youtube-iframe";
 import { View, Text, Image, ScrollView } from "react-native";
 import { Modal, Portal, useTheme } from "react-native-paper";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import { stylesheet } from "../../stylesheets";
 import { formatNumber } from "../../utils/format";
 import { City as CityType } from "./types";
+import settings from "../../settings.json";
 
-export const City: FC<CityType> = ({ name, description, population, area, imageUrl, videoUrl }) => {
+export const City: FC<CityType> = ({ name, description, population, area, imageUrl, youtubeVideoId }) => {
   const { colors } = useTheme();
 
   const [descriptionOpened, setDescriptionOpened] = useState(false);
@@ -15,7 +17,7 @@ export const City: FC<CityType> = ({ name, description, population, area, imageU
   const openDescription = () => setDescriptionOpened(true);
   const closeDescription = () => setDescriptionOpened(false);
 
-  const openVideo = () => setVideoOpened(true);
+  const openVideo = () => youtubeVideoId && setVideoOpened(true);
   const closeVideo = () => setVideoOpened(false);
 
   return (
@@ -34,8 +36,14 @@ export const City: FC<CityType> = ({ name, description, population, area, imageU
       {imageUrl ? <Image source={{ uri: imageUrl }} style={{ ...stylesheet.cityImage }} /> : null}
       <View style={stylesheet.cityDetails}>
         <Ionicons name="information-circle-outline" color={colors.text} size={36} onPress={openDescription} />
-        <Ionicons name="videocam-outline" color={colors.text} size={36} onPress={openVideo} />
+        <Ionicons
+          name="videocam-outline"
+          color={youtubeVideoId ? colors.text : colors.disabled}
+          size={36}
+          onPress={openVideo}
+        />
         <Ionicons name="location-outline" color={colors.text} size={36} />
+        <Ionicons name="cloud-outline" color={colors.text} size={36} />
       </View>
       <Portal>
         <Modal
@@ -50,8 +58,19 @@ export const City: FC<CityType> = ({ name, description, population, area, imageU
         </Modal>
       </Portal>
       <Portal>
-        <Modal visible={videoOpened} onDismiss={closeVideo} contentContainerStyle={stylesheet.modalContainer}>
-          <Ionicons style={stylesheet.modalClose} name="close-outline" size={24} onPress={closeVideo} />
+        <Modal
+          visible={videoOpened}
+          onDismiss={closeVideo}
+          contentContainerStyle={{ backgroundColor: colors.background, ...stylesheet.videoModal }}
+        >
+          <Ionicons
+            name="close-outline"
+            size={24}
+            onPress={closeVideo}
+            color={colors.text}
+            style={stylesheet.videoModalClose}
+          />
+          <YouTubePlayer videoId={youtubeVideoId!} play height={270} />
         </Modal>
       </Portal>
     </View>

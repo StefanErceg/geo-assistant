@@ -53,7 +53,7 @@ export const stylesheet = StyleSheet.create({
     paddingHorizontal: 20,
     paddingTop: 10,
     marginBottom: 20,
-    borderWidth: 1,
+    borderBottomWidth: 1,
     borderColor: "white",
     borderRadius: 6,
     display: "flex",
@@ -97,8 +97,9 @@ export const stylesheet = StyleSheet.create({
     width: "100%",
     display: "flex",
     marginTop: 20,
+    paddingHorizontal: 20,
     flexDirection: "row",
-    justifyContent: "space-evenly",
+    justifyContent: "space-between",
     alignItems: "center",
   },
 
@@ -114,6 +115,18 @@ export const stylesheet = StyleSheet.create({
     color: "black",
     marginRight: 20,
     marginLeft: "auto",
+  },
+
+  videoModal: {
+    padding: 40,
+    display: "flex",
+    justifyContent: "center",
+  },
+
+  videoModalClose: {
+    marginRight: 20,
+    marginLeft: "auto",
+    marginBottom: 30,
   },
 
   generalPage: {
