@@ -19,6 +19,13 @@ The Serbian realms disappeared by the mid-16th century, torn by domestic feuds a
 
 Serbia achieved its current borders at the end of World War II, when it became a federal unit within the Federal People's Republic of Yugoslavia (proclaimed in November 1945). After the dissolution of Yugoslavia in a series of wars in the 1990s, Serbia once again became an independent state on 5 June 2006, following the breakup of a short-lived union with Montenegro. `;
 
+export const mapRegion = {
+  latitude: 44.2052984,
+  longitude: 20.7895917,
+  latitudeDelta: 4.4,
+  longitudeDelta: 4.4,
+};
+
 export const general = {
   countryName,
   population,

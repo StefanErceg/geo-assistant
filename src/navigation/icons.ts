@@ -1,10 +1,4 @@
-import {
-  citiesPage,
-  generalPage,
-  locationsPage,
-  newsPage,
-  settingsPage,
-} from "../consts/pages";
+import { citiesPage, generalPage, attractionsPage, newsPage, settingsPage } from "../consts/pages";
 
 export interface Icon {
   nonFocused: string;
@@ -16,7 +10,7 @@ export const icons: { [key: string]: Icon } = {
     nonFocused: "business-outline",
     focused: "business",
   },
-  [locationsPage]: {
+  [attractionsPage]: {
     nonFocused: "location-outline",
     focused: "location",
   },

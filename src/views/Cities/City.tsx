@@ -1,24 +1,31 @@
 import React, { FC, useState } from "react";
+
+import MapView from "react-native-maps";
 import YouTubePlayer from "react-native-youtube-iframe";
-import { View, Text, Image, ScrollView } from "react-native";
-import { Modal, Portal, useTheme } from "react-native-paper";
 import Ionicons from "react-native-vector-icons/Ionicons";
+import { View, Text, Image, ScrollView, Dimensions } from "react-native";
+import { Modal, Portal, useTheme } from "react-native-paper";
+
 import { stylesheet } from "../../stylesheets";
 import { formatNumber } from "../../utils/format";
 import { City as CityType } from "./types";
-import settings from "../../settings.json";
+// import settings from "../../settings.json";
 
 export const City: FC<CityType> = ({ name, description, population, area, imageUrl, youtubeVideoId }) => {
   const { colors } = useTheme();
 
   const [descriptionOpened, setDescriptionOpened] = useState(false);
   const [videoOpened, setVideoOpened] = useState(false);
+  const [mapsOpened, setMapsOpened] = useState(false);
 
   const openDescription = () => setDescriptionOpened(true);
   const closeDescription = () => setDescriptionOpened(false);
 
   const openVideo = () => youtubeVideoId && setVideoOpened(true);
   const closeVideo = () => setVideoOpened(false);
+
+  const openMaps = () => setMapsOpened(true);
+  const closeMaps = () => setMapsOpened(false);
 
   return (
     <View style={stylesheet.cityItem}>
@@ -42,7 +49,7 @@ export const City: FC<CityType> = ({ name, description, population, area, imageU
           size={36}
           onPress={openVideo}
         />
-        <Ionicons name="location-outline" color={colors.text} size={36} />
+        <Ionicons name="location-outline" color={colors.text} size={36} onPress={openMaps} />
         <Ionicons name="cloud-outline" color={colors.text} size={36} />
       </View>
       <Portal>
@@ -71,6 +78,19 @@ export const City: FC<CityType> = ({ name, description, population, area, imageU
             style={stylesheet.videoModalClose}
           />
           <YouTubePlayer videoId={youtubeVideoId!} play height={270} />
+        </Modal>
+      </Portal>
+      <Portal>
+        <Modal visible={mapsOpened} onDismiss={closeMaps} contentContainerStyle={stylesheet.mapModal}>
+          <MapView
+            style={{ height: Dimensions.get("screen").height - 300, width: Dimensions.get("screen").width - 50 }}
+            initialRegion={{
+              latitude: 44.8152453,
+              longitude: 20.422597,
+              latitudeDelta: 0.3,
+              longitudeDelta: 0.3,
+            }}
+          ></MapView>
         </Modal>
       </Portal>
     </View>

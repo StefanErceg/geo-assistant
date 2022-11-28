@@ -129,6 +129,10 @@ export const stylesheet = StyleSheet.create({
     marginBottom: 30,
   },
 
+  mapModal: {
+    padding: 20,
+  },
+
   generalPage: {
     width: "95%",
     paddingTop: 50,

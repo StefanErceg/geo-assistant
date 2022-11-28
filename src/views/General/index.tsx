@@ -3,6 +3,7 @@ import { SafeAreaView, ScrollView, Text, View, Image } from "react-native";
 import { useTheme } from "react-native-paper";
 import { general } from "../../mock/general";
 import { stylesheet } from "../../stylesheets";
+import { formatNumber } from "../../utils/format";
 
 export default () => {
   const { colors } = useTheme();
@@ -15,7 +16,7 @@ export default () => {
           <View style={stylesheet.generalInfo}>
             <View style={stylesheet.generalInfoItem}>
               <Text style={{ color: colors.text, width: "40%" }}>Population:</Text>
-              <Text style={{ color: colors.text }}>{population}</Text>
+              <Text style={{ color: colors.text }}>{formatNumber(population)}</Text>
             </View>
             <View style={stylesheet.generalInfoItem}>
               <Text style={{ color: colors.text, width: "40%" }}>Capital:</Text>

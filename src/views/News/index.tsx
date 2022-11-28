@@ -1,24 +1,37 @@
-import { View, Text, ScrollView, Image, FlatList, ListRenderItemInfo } from "react-native";
+import * as Network from "expo-network";
 import React, { FC, useEffect, useState } from "react";
 import { ActivityIndicator, useTheme } from "react-native-paper";
-import { stylesheet } from "../../stylesheets";
+import { View, Text, ScrollView, Image, FlatList, ListRenderItemInfo } from "react-native";
+
 import { news } from "../../api";
-import { SafeAreaView } from "react-native-safe-area-context";
 import { Article } from "./types";
+import { stylesheet } from "../../stylesheets";
 import { Loader } from "../../components/common/Loader";
+import { loadData, storeData } from "../../utils/persist";
+import { SafeAreaView } from "react-native-safe-area-context";
+import { PERSISTED_ARTICLES, PERSISTED_PAGE } from "../../consts/news";
 
 const News = () => {
   const { colors } = useTheme();
   const [articles, setArticles] = useState<Article[]>([]);
   const [totalArticles, setTotalArticles] = useState<number | null>(null);
   const [page, setPage] = useState(0);
+  const [isOnline, setIsOnline] = useState(false);
   const [loaded, setLoaded] = useState(false);
 
-  const pageSize = 20;
+  const pageSize = 10;
 
   useEffect(() => {
-    loadNews();
-  }, [page]);
+    (async () => {
+      const { isInternetReachable = false } = await Network.getNetworkStateAsync();
+      setIsOnline(isInternetReachable);
+    })();
+  }, []);
+
+  useEffect(() => {
+    if (isOnline) loadNews();
+    loadNewsFromStore();
+  }, [page, isOnline]);
 
   const loadNews = async () => {
     try {
@@ -36,36 +49,33 @@ const News = () => {
     }
   };
 
+  const loadNewsFromStore = async () => {
+    if (loaded) return;
+    const articlesFromStore = await loadData(PERSISTED_ARTICLES);
+    if (articlesFromStore) {
+      const persistedArticles = JSON.parse(articlesFromStore);
+      setArticles(persistedArticles);
+    }
+
+    const pageFromStore = await loadData(PERSISTED_PAGE);
+    if (pageFromStore) {
+      const persistedPage = +pageFromStore;
+      setPage(persistedPage);
+    }
+    setLoaded(true);
+  };
+
+  useEffect(() => {
+    const persistData = JSON.stringify(articles);
+    storeData(PERSISTED_ARTICLES, persistData);
+  }, [articles]);
+
   return (
     <SafeAreaView style={stylesheet.container}>
-      {loaded ? (
-        // <ScrollView>
-        //   {articles?.map(({ author, title, urlToImage }, index) => {
-        //     const imageSource = urlToImage
-        //       ? { uri: urlToImage }
-        //       : require("./news-placeholder.jpg");
-        //     return (
-        //       <View style={stylesheet.newsItem} key={index}>
-        //         <Image
-        //           source={imageSource}
-        //           style={{ ...stylesheet.newsImage }}
-        //         />
-        //         <Text style={{ color: colors.text, ...stylesheet.newsTitle }}>
-        //           {title}
-        //         </Text>
-        //       </View>
-        //     );
-        //   })}
-        // </ScrollView>
+      {loaded && articles.length ? (
         <FlatList
-          // contentContainerStyle={{
-          //   flex: 1,
-          //   flexDirection: "column",
-          //   height: "100%",
-          //   width: "100%",
-          // }}
           data={articles}
-          keyExtractor={(_, index) => index.toString()}
+          keyExtractor={({ url }) => url}
           renderItem={({ item: { title, urlToImage }, index }: ListRenderItemInfo<Article>) => {
             const imageSource = urlToImage ? { uri: urlToImage } : require("./news-placeholder.jpg");
             return (
@@ -76,7 +86,7 @@ const News = () => {
             );
           }}
           onEndReached={() => setPage((page) => page + 1)}
-          onEndReachedThreshold={0.5}
+          onEndReachedThreshold={0.7}
           initialNumToRender={10}
         />
       ) : (
