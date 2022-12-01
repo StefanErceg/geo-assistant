@@ -22,8 +22,8 @@ Serbia achieved its current borders at the end of World War II, when it became a
 export const mapRegion = {
   latitude: 44.2052984,
   longitude: 20.7895917,
-  latitudeDelta: 4.4,
-  longitudeDelta: 4.4,
+  latitudeDelta: 4.6,
+  longitudeDelta: 4.6,
 };
 
 export const general = {

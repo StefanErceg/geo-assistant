@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import MapView from "react-native-maps";
 import { Marker } from "react-native-maps";
 import { useTheme } from "react-native-paper";
@@ -10,6 +10,8 @@ import { stylesheet } from "../../stylesheets";
 
 export default () => {
   const { colors } = useTheme();
+
+  const [selectedAttraction, selectAttraction] = useState<number | null>(null);
   return (
     <SafeAreaView style={stylesheet.container}>
       <Text style={{ color: colors.text, marginTop: 20, fontSize: 20 }}>Attractions</Text>
@@ -21,8 +23,15 @@ export default () => {
         }}
         initialRegion={mapRegion}
       >
-        {attractions.map(({ id, name, coordinate, description }) => (
-          <Marker key={id} coordinate={coordinate} title={name} description={description} />
+        {attractions.map(({ id, name, coordinate, shortDescription }) => (
+          <Marker
+            key={id}
+            coordinate={coordinate}
+            title={name}
+            description={shortDescription}
+            opacity={selectedAttraction === id ? 1 : 0.7}
+            onPress={() => selectAttraction(id)}
+          />
         ))}
       </MapView>
     </SafeAreaView>

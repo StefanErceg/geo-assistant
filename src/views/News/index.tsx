@@ -75,7 +75,7 @@ const News = () => {
       {loaded && articles.length ? (
         <FlatList
           data={articles}
-          keyExtractor={({ url }) => url}
+          keyExtractor={( _, index ) => index.toString()}
           renderItem={({ item: { title, urlToImage }, index }: ListRenderItemInfo<Article>) => {
             const imageSource = urlToImage ? { uri: urlToImage } : require("./news-placeholder.jpg");
             return (
