@@ -88,11 +88,3 @@ export const attractions = [
       "Tornik je najviši vrh Zlatibora i visok je 1496 m. Udaljen je desetak kilometara od Kraljevih Voda, centra Zlatibora i poznatog turističkog mjesta. Do njega se dolazi tako što se od Voda krene prema Podgorici magistralnim putem i nakon dva kilometra se skrene desno. ",
   },
 ];
-
-const template = {
-  id: 0,
-  name: "",
-  coordinate: { latitude: 0, longitude: 0 },
-  shortDescription: "",
-  description: "",
-};

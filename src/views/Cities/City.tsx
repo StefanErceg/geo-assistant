@@ -28,7 +28,7 @@ export const City: FC<CityType> = ({ name, description, population, area, imageU
   const closeMaps = () => setMapsOpened(false);
 
   return (
-    <View style={stylesheet.cityItem}>
+    <View style={{ ...stylesheet.cityItem, borderColor: colors.accent }}>
       <Text style={{ color: colors.text, ...stylesheet.cityName }}>{name["sr"]}</Text>
       <View style={stylesheet.cityPopulation}>
         <Ionicons style={stylesheet.cityPopulationIcon} name="people-outline" size={24} color={colors.text} />

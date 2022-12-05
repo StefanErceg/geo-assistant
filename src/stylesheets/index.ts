@@ -43,7 +43,7 @@ export const stylesheet = StyleSheet.create({
 
   cityList: {
     width: "90%",
-    paddingTop: 50,
+    marginTop: 20,
     height: "100%",
   },
 
@@ -54,7 +54,6 @@ export const stylesheet = StyleSheet.create({
     paddingTop: 10,
     marginBottom: 20,
     borderBottomWidth: 1,
-    borderColor: "white",
     borderRadius: 6,
     display: "flex",
     flexDirection: "column",
@@ -133,9 +132,35 @@ export const stylesheet = StyleSheet.create({
     padding: 20,
   },
 
+  attractionsList: {
+    paddingHorizontal: 20,
+  },
+
+  attractionItem: {
+    paddingTop: 20,
+    borderBottomWidth: 1,
+    paddingBottom: 20,
+    paddingHorizontal: 10,
+  },
+  attractionTitle: {
+    fontSize: 20,
+    fontWeight: "600",
+  },
+
+  attractionData: {},
+
+  attractionImage: {
+    width: 150,
+    height: 150,
+  },
+
+  attractionDescription: {
+    textAlign: "justify",
+  },
+
   generalPage: {
     width: "95%",
-    paddingTop: 50,
+    marginTop: 50,
   },
 
   generalTitle: {
