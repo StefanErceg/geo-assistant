@@ -1,6 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { ScrollView } from "react-native";
+import { FAVORITES } from "../../consts/attractions";
 import { stylesheet } from "../../stylesheets";
+import { loadData, storeData } from "../../utils/persist";
 import { AttractionItem } from "./AttractionItem";
 import { Attraction } from "./types";
 
@@ -13,6 +15,8 @@ interface Props {
 export const AttractionList = ({ attractions, selectedAttraction, selectAttraction }: Props) => {
   const [ref, setRef] = useState<ScrollView | null>(null);
   const [yCoordinates, setYCoordinates] = useState<{ [key: string]: number }>({});
+  const [favorites, setFavorites] = useState<number[]>([]);
+  const [loaded, setLoaded] = useState(false);
 
   const setItemYCoordinate = (itemId: number, value: number) => {
     setYCoordinates((yCoordinates) => ({ ...yCoordinates, [itemId]: value }));
@@ -28,24 +32,65 @@ export const AttractionList = ({ attractions, selectedAttraction, selectAttracti
     }
   }, [selectedAttraction]);
 
+  useEffect(() => {
+    (async () => {
+      loadFavorites();
+    })();
+  }, []);
+
+  const loadFavorites = async () => {
+    try {
+      const favoritesFromStore = await loadData(FAVORITES);
+      if (favoritesFromStore) {
+        const favorites = JSON.parse(favoritesFromStore);
+        setFavorites(favorites);
+      }
+    } finally {
+      setLoaded(true);
+    }
+  };
+
+  useEffect(() => {
+    if (!loaded) return;
+    const data = JSON.stringify(favorites);
+    storeData(FAVORITES, data);
+  }, [favorites]);
+
+  const addToFavorites = (attractionId: number) => {
+    setFavorites((favorites) => [...favorites, attractionId]);
+  };
+
+  const removeFromFavorites = (attractionId: number) => {
+    setFavorites((favorites) => favorites.filter((id) => id !== attractionId));
+  };
+
+  const sortedAttractions = useMemo(() => {
+    return [...attractions].sort(({ id: A }, { id: B }) => +favorites.includes(B) - +favorites.includes(A));
+  }, [attractions, favorites]);
+
   return (
-    <ScrollView
-      style={stylesheet.attractionsList}
-      ref={(ref) => {
-        setRef(ref);
-      }}
-    >
-      {attractions?.map(({ id, name, description }) => (
-        <AttractionItem
-          key={`${id}_item`}
-          id={id}
-          name={name}
-          description={description}
-          selectedAttraction={selectedAttraction}
-          selectAttraction={selectAttraction}
-          setYCoordinate={setItemYCoordinate}
-        />
-      ))}
-    </ScrollView>
+    loaded && (
+      <ScrollView
+        style={stylesheet.attractionsList}
+        ref={(ref) => {
+          setRef(ref);
+        }}
+      >
+        {sortedAttractions?.map(({ id, name, description }) => (
+          <AttractionItem
+            key={`${id}_item`}
+            id={id}
+            name={name}
+            description={description}
+            selectedAttraction={selectedAttraction}
+            selectAttraction={selectAttraction}
+            setYCoordinate={setItemYCoordinate}
+            favorites={favorites}
+            addToFavorites={addToFavorites}
+            removeFromFavorites={removeFromFavorites}
+          />
+        ))}
+      </ScrollView>
+    )
   );
 };
