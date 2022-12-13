@@ -7,4 +7,5 @@ export interface Attraction {
   };
   shortDescription: string;
   description: string;
+  images: string[];
 }

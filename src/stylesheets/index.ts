@@ -7,7 +7,7 @@ export const stylesheet = StyleSheet.create({
     alignItems: "center",
     height: "90%",
     paddingBottom: 5,
-    marginTop: 30,
+    marginTop: 50,
   },
 
   newsItem: {
@@ -43,7 +43,6 @@ export const stylesheet = StyleSheet.create({
 
   cityList: {
     width: "90%",
-    marginTop: 20,
     height: "100%",
   },
 
@@ -150,8 +149,9 @@ export const stylesheet = StyleSheet.create({
   attractionData: {},
 
   attractionImage: {
-    width: 150,
-    height: 150,
+    borderRadius: 6,
+    resizeMode: "cover",
+    margin: 10,
   },
 
   attractionDescription: {
@@ -160,7 +160,6 @@ export const stylesheet = StyleSheet.create({
 
   generalPage: {
     width: "95%",
-    marginTop: 50,
   },
 
   generalTitle: {
@@ -194,5 +193,13 @@ export const stylesheet = StyleSheet.create({
   generalFlagImage: {
     width: "80%",
     height: "60%",
+  },
+
+  settings: {
+    marginTop: 50,
+    height: "100%",
+    width: "100%",
+    display: "flex",
+    alignItems: "center",
   },
 });

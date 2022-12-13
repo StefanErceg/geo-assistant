@@ -3,13 +3,12 @@ import React, { FC, useState } from "react";
 import MapView from "react-native-maps";
 import YouTubePlayer from "react-native-youtube-iframe";
 import Ionicons from "react-native-vector-icons/Ionicons";
-import { View, Text, Image, ScrollView, Dimensions } from "react-native";
-import { Modal, Portal, useTheme } from "react-native-paper";
+import { View, Image, ScrollView, Dimensions } from "react-native";
+import { Modal, Portal, Text, useTheme } from "react-native-paper";
 
 import { stylesheet } from "../../stylesheets";
 import { formatNumber } from "../../utils/format";
 import { City as CityType } from "./types";
-// import settings from "../../settings.json";
 
 export const City: FC<CityType> = ({ name, description, population, area, imageUrl, youtubeVideoId }) => {
   const { colors } = useTheme();
@@ -29,15 +28,15 @@ export const City: FC<CityType> = ({ name, description, population, area, imageU
 
   return (
     <View style={{ ...stylesheet.cityItem, borderColor: colors.accent }}>
-      <Text style={{ color: colors.text, ...stylesheet.cityName }}>{name["sr"]}</Text>
+      <Text style={{ ...stylesheet.cityName }}>{name["sr"]}</Text>
       <View style={stylesheet.cityPopulation}>
         <Ionicons style={stylesheet.cityPopulationIcon} name="people-outline" size={24} color={colors.text} />
-        <Text style={{ color: colors.text, ...stylesheet.cityDataLabel }}>Population: </Text>
+        <Text style={{ ...stylesheet.cityDataLabel }}>Population: </Text>
         <Text style={{ color: colors.text }}>{formatNumber(population)}</Text>
       </View>
       <View style={stylesheet.cityArea}>
         <Ionicons style={stylesheet.cityAreaIcon} name="earth-outline" size={24} color={colors.text} />
-        <Text style={{ color: colors.text, ...stylesheet.cityDataLabel }}>Area: </Text>
+        <Text style={{ ...stylesheet.cityDataLabel }}>Area: </Text>
         <Text style={{ color: colors.text }}>{formatNumber(area)} km&sup2;</Text>
       </View>
       {imageUrl ? <Image source={{ uri: imageUrl }} style={{ ...stylesheet.cityImage }} /> : null}

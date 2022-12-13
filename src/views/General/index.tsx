@@ -1,43 +1,43 @@
 import React from "react";
-import { SafeAreaView, ScrollView, Text, View, Image } from "react-native";
-import { useTheme } from "react-native-paper";
+import { Text } from "react-native-paper";
+import { SafeAreaView, ScrollView, View, Image } from "react-native";
+
 import { general } from "../../mock/general";
 import { stylesheet } from "../../stylesheets";
 import { formatNumber } from "../../utils/format";
 
 export default () => {
-  const { colors } = useTheme();
   const { countryName, history, population, capital, flagImageUrl, officialLanguage, currency } = general;
   return (
     <SafeAreaView style={stylesheet.container}>
       <ScrollView style={stylesheet.generalPage}>
-        <Text style={{ color: colors.text, ...stylesheet.generalTitle }}>{countryName} details</Text>
+        <Text style={{ ...stylesheet.generalTitle }}>{countryName} details</Text>
         <View style={stylesheet.generalData}>
           <View style={stylesheet.generalInfo}>
             <View style={stylesheet.generalInfoItem}>
-              <Text style={{ color: colors.text, width: "40%" }}>Population:</Text>
-              <Text style={{ color: colors.text }}>{formatNumber(population)}</Text>
+              <Text style={{ width: "40%" }}>Population:</Text>
+              <Text style={{}}>{formatNumber(population)}</Text>
             </View>
             <View style={stylesheet.generalInfoItem}>
-              <Text style={{ color: colors.text, width: "40%" }}>Capital:</Text>
-              <Text style={{ color: colors.text }}>{capital}</Text>
+              <Text style={{ width: "40%" }}>Capital:</Text>
+              <Text style={{}}>{capital}</Text>
             </View>
             <View style={stylesheet.generalInfoItem}>
-              <Text style={{ color: colors.text, width: "40%" }}>Language:</Text>
-              <Text style={{ color: colors.text }}>{officialLanguage}</Text>
+              <Text style={{ width: "40%" }}>Language:</Text>
+              <Text style={{}}>{officialLanguage}</Text>
             </View>
             <View style={stylesheet.generalInfoItem}>
-              <Text style={{ color: colors.text, width: "40%" }}>Currency:</Text>
-              <Text style={{ color: colors.text }}>{currency}</Text>
+              <Text style={{ width: "40%" }}>Currency:</Text>
+              <Text style={{}}>{currency}</Text>
             </View>
           </View>
           <View style={stylesheet.generalFlag}>
             <Image source={{ uri: flagImageUrl }} style={{ ...stylesheet.generalFlagImage }} />
           </View>
         </View>
-        <Text style={{ color: colors.text }}></Text>
-        <Text style={{ color: colors.text, ...stylesheet.generalTitle }}>History</Text>
-        <Text style={{ color: colors.text }}>{history}</Text>
+        <Text style={{}}></Text>
+        <Text style={{ ...stylesheet.generalTitle }}>History</Text>
+        <Text style={{}}>{history}</Text>
       </ScrollView>
     </SafeAreaView>
   );

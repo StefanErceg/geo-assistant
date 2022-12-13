@@ -1,7 +1,7 @@
 import * as Network from "expo-network";
 import React, { FC, useEffect, useState } from "react";
-import { ActivityIndicator, useTheme } from "react-native-paper";
-import { View, Text, ScrollView, Image, FlatList, ListRenderItemInfo } from "react-native";
+import { ActivityIndicator, Text, useTheme } from "react-native-paper";
+import { View, ScrollView, Image, FlatList, ListRenderItemInfo } from "react-native";
 
 import { news } from "../../api";
 import { Article } from "./types";
@@ -75,13 +75,13 @@ const News = () => {
       {loaded && articles.length ? (
         <FlatList
           data={articles}
-          keyExtractor={( _, index ) => index.toString()}
+          keyExtractor={(_, index) => index.toString()}
           renderItem={({ item: { title, urlToImage }, index }: ListRenderItemInfo<Article>) => {
             const imageSource = urlToImage ? { uri: urlToImage } : require("./news-placeholder.jpg");
             return (
               <View style={stylesheet.newsItem} key={index}>
                 <Image source={imageSource} style={{ ...stylesheet.newsImage }} />
-                <Text style={{ color: colors.text, ...stylesheet.newsTitle }}>{title}</Text>
+                <Text style={{ ...stylesheet.newsTitle }}>{title}</Text>
               </View>
             );
           }}

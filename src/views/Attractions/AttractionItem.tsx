@@ -1,13 +1,14 @@
 import React, { useMemo } from "react";
-import { useTheme } from "react-native-paper";
+import { useTheme, Text } from "react-native-paper";
 import Ionicons from "react-native-vector-icons/Ionicons";
-import { View, Text, Image, TouchableOpacity } from "react-native";
+import { View, Image, TouchableOpacity, ScrollView } from "react-native";
 
 import { stylesheet } from "../../stylesheets";
 
 interface Props {
   id: number;
   name: string;
+  images: string[];
   description: string;
   favorites: number[];
   selectedAttraction: number | null;
@@ -20,6 +21,7 @@ interface Props {
 export const AttractionItem = ({
   id,
   name,
+  images,
   favorites,
   description,
   setYCoordinate,
@@ -29,7 +31,6 @@ export const AttractionItem = ({
   removeFromFavorites,
 }: Props) => {
   const { colors } = useTheme();
-  const imageSource = require("../News/news-placeholder.jpg");
 
   const selected = favorites.includes(id);
 
@@ -53,7 +54,7 @@ export const AttractionItem = ({
     >
       <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between" }}>
         <TouchableOpacity onPress={() => selectAttraction(id)}>
-          <Text style={{ color: colors.text, ...stylesheet.attractionTitle }}>{name}</Text>
+          <Text style={{ ...stylesheet.attractionTitle }}>{name}</Text>
         </TouchableOpacity>
         <Ionicons
           name={`bookmark${selected ? "" : "-outline"}`}
@@ -64,9 +65,21 @@ export const AttractionItem = ({
       </View>
       <View style={stylesheet.attractionData}>
         <TouchableOpacity onPress={() => selectAttraction(id)}>
-          <Text style={{ color: colors.text, ...stylesheet.attractionDescription }}>{description}</Text>
+          <Text style={{ ...stylesheet.attractionDescription }}>{description}</Text>
         </TouchableOpacity>
-        <Image source={imageSource} style={{ ...stylesheet.attractionImage }} />
+        <ScrollView horizontal>
+          {images?.map((imageSource, index) => (
+            <Image
+              key={index}
+              source={{
+                uri: imageSource,
+                height: 200,
+                width: 200,
+              }}
+              style={stylesheet.attractionImage}
+            />
+          ))}
+        </ScrollView>
       </View>
     </View>
   );

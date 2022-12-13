@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { useTheme } from "react-native-paper";
 import { SafeAreaView, Text } from "react-native";
 
-import { attractions } from "../../mock/attractions";
+// import { attractions } from "../../mock/attractions";
+import attractions from "../../../attractions.json";
 import { stylesheet } from "../../stylesheets";
 import { AttractionList } from "./AttractionsList";
 import { AttractionsMap } from "./AttractionsMap";

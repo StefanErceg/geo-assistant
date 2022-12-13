@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useState } from "react";
-import { ScrollView } from "react-native";
+import { ScrollView, View } from "react-native";
 import { FAVORITES } from "../../consts/attractions";
 import { stylesheet } from "../../stylesheets";
 import { loadData, storeData } from "../../utils/persist";
@@ -26,7 +26,7 @@ export const AttractionList = ({ attractions, selectedAttraction, selectAttracti
     if (selectedAttraction) {
       ref?.scrollTo({
         x: 0,
-        y: yCoordinates[selectedAttraction] - 30,
+        y: yCoordinates[selectedAttraction] - 10,
         animated: true,
       });
     }
@@ -68,29 +68,30 @@ export const AttractionList = ({ attractions, selectedAttraction, selectAttracti
     return [...attractions].sort(({ id: A }, { id: B }) => +favorites.includes(B) - +favorites.includes(A));
   }, [attractions, favorites]);
 
-  return (
-    loaded && (
-      <ScrollView
-        style={stylesheet.attractionsList}
-        ref={(ref) => {
-          setRef(ref);
-        }}
-      >
-        {sortedAttractions?.map(({ id, name, description }) => (
-          <AttractionItem
-            key={`${id}_item`}
-            id={id}
-            name={name}
-            description={description}
-            selectedAttraction={selectedAttraction}
-            selectAttraction={selectAttraction}
-            setYCoordinate={setItemYCoordinate}
-            favorites={favorites}
-            addToFavorites={addToFavorites}
-            removeFromFavorites={removeFromFavorites}
-          />
-        ))}
-      </ScrollView>
-    )
+  return loaded ? (
+    <ScrollView
+      style={stylesheet.attractionsList}
+      ref={(ref) => {
+        setRef(ref);
+      }}
+    >
+      {sortedAttractions?.map(({ id, name, description, images }) => (
+        <AttractionItem
+          key={`${id}_item`}
+          id={id}
+          name={name}
+          images={images}
+          description={description}
+          selectedAttraction={selectedAttraction}
+          selectAttraction={selectAttraction}
+          setYCoordinate={setItemYCoordinate}
+          favorites={favorites}
+          addToFavorites={addToFavorites}
+          removeFromFavorites={removeFromFavorites}
+        />
+      ))}
+    </ScrollView>
+  ) : (
+    <View></View>
   );
 };
