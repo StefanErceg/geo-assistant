@@ -1,5 +1,5 @@
 import React from "react";
-import { Dimensions } from "react-native";
+import { Dimensions, useWindowDimensions } from "react-native";
 import MapView, { Marker } from "react-native-maps";
 import { mapRegion } from "../../mock/general";
 import { Attraction } from "./types";
@@ -11,12 +11,14 @@ interface Props {
 }
 
 export const AttractionsMap = ({ attractions, selectedAttraction, selectAttraction }: Props) => {
+  const { height, width } = useWindowDimensions();
+
+  const landscape = height < width;
   return (
     <MapView
       style={{
-        height: Dimensions.get("screen").height / 3,
-        width: Dimensions.get("screen").width - 40,
-        marginTop: 20,
+        height: landscape ? height : height / 3,
+        width: landscape ? width / 3 : width - 40,
       }}
       initialRegion={mapRegion}
     >

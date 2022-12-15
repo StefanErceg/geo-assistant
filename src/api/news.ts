@@ -27,19 +27,12 @@ interface Response {
 }
 
 export const news = {
-  getTopHeadlines({
-    country,
-    category,
-    pageSize,
-    page,
-  }: Props): Promise<Response> {
+  getTopHeadlines({ country, category, pageSize, page }: Props): Promise<Response> {
     return http
       .get(
-        `v2/top-headlines?country=${country}${
-          category ? `&category=${category}` : ""
-        }${pageSize ? `&pageSize=${pageSize}` : ""}${
-          page ? `&page=${page}` : ""
-        }`
+        `v2/top-headlines?country=${country}${category ? `&category=${category}` : ""}${
+          pageSize ? `&pageSize=${pageSize}` : ""
+        }${page ? `&page=${page}` : ""}`
       )
       .then((res) => res.data);
   },

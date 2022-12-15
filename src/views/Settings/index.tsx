@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { SafeAreaView, View } from "react-native";
 import { Dropdown, DropdownItem } from "../../components/common/Dropdown";
+import { useSettings } from "../../context/settings/SettingsProvider";
 
 import { stylesheet } from "../../stylesheets";
 import { SettingsSwitch } from "./SettingsSwitch";
@@ -22,8 +23,7 @@ const selectLanguageLabel: { [key: string]: string } = {
 };
 
 export default () => {
-  const [darkTheme, setDarkTheme] = useState(false);
-  const [offlineMode, setOfflineMode] = useState(false);
+  const { darkMode, offlineMode, setDarkMode, setOfflineMode } = useSettings();
 
   const [language, setLanguage] = useState(languages[0].value);
 
@@ -32,7 +32,7 @@ export default () => {
   return (
     <SafeAreaView style={stylesheet.container}>
       <View style={stylesheet.settings}>
-        <SettingsSwitch value={darkTheme} onChange={(value) => setDarkTheme(value)} label="Dark theme" />
+        <SettingsSwitch value={darkMode} onChange={(value) => setDarkMode(value)} label="Dark theme" />
         <SettingsSwitch value={offlineMode} onChange={(value) => setOfflineMode(value)} label="Offline mode" />
         <View style={{ width: "75%" }}>
           <Dropdown label={label} value={language} setValue={setLanguage} list={languages} />

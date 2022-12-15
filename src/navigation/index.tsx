@@ -1,16 +1,18 @@
 import React from "react";
-import { DarkTheme, NavigationContainer } from "@react-navigation/native";
+import Ionicons from "react-native-vector-icons/Ionicons";
+import { DarkTheme, DefaultTheme, NavigationContainer } from "@react-navigation/native";
 import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
 
-import Ionicons from "react-native-vector-icons/Ionicons";
 import { pages } from "./pages";
 import { icons } from "./icons";
+import { useSettings } from "../context/settings/SettingsProvider";
 
 const Tab = createMaterialBottomTabNavigator();
 
 export const Navigation = () => {
+  const { darkMode } = useSettings();
   return (
-    <NavigationContainer theme={DarkTheme}>
+    <NavigationContainer theme={darkMode ? DarkTheme : DefaultTheme}>
       <Tab.Navigator
         screenOptions={({ route }) => ({
           tabBarIcon: ({ focused }) => {

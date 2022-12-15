@@ -28,16 +28,16 @@ export const City: FC<CityType> = ({ name, description, population, area, imageU
 
   return (
     <View style={{ ...stylesheet.cityItem, borderColor: colors.accent }}>
-      <Text style={{ ...stylesheet.cityName }}>{name["sr"]}</Text>
+      <Text style={{ ...stylesheet.cityName }}>{name}</Text>
       <View style={stylesheet.cityPopulation}>
         <Ionicons style={stylesheet.cityPopulationIcon} name="people-outline" size={24} color={colors.text} />
         <Text style={{ ...stylesheet.cityDataLabel }}>Population: </Text>
-        <Text style={{ color: colors.text }}>{formatNumber(population)}</Text>
+        <Text>{formatNumber(population)}</Text>
       </View>
       <View style={stylesheet.cityArea}>
         <Ionicons style={stylesheet.cityAreaIcon} name="earth-outline" size={24} color={colors.text} />
         <Text style={{ ...stylesheet.cityDataLabel }}>Area: </Text>
-        <Text style={{ color: colors.text }}>{formatNumber(area)} km&sup2;</Text>
+        <Text>{formatNumber(area)} km&sup2;</Text>
       </View>
       {imageUrl ? <Image source={{ uri: imageUrl }} style={{ ...stylesheet.cityImage }} /> : null}
       <View style={stylesheet.cityDetails}>
