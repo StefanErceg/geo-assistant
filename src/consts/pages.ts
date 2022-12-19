@@ -1,5 +1,5 @@
-export const citiesPage = "Cities";
-export const attractionsPage = "Attractions";
-export const newsPage = "News";
-export const generalPage = "General";
-export const settingsPage = "Settings";
+export const citiesPage = "cities";
+export const attractionsPage = "attractions";
+export const newsPage = "news";
+export const generalPage = "general";
+export const settingsPage = "settings";

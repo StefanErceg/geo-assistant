@@ -77,7 +77,7 @@ export const stylesheet = StyleSheet.create({
 
   cityDataLabel: {
     marginRight: 10,
-    width: 80,
+    width: 105,
   },
 
   cityArea: {

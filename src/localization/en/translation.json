@@ -1,0 +1,25 @@
+{
+  "pages": {
+    "cities": "Cities",
+    "attractions": "Attractions",
+    "news": "News",
+    "general": "General",
+    "settings": "Settings"
+  },
+  "city": {
+    "population": "Population",
+    "area": "Area"
+  },
+  "general": {
+    "population": "Population",
+    "capital": "Capital",
+    "language": "Language",
+    "currency": "Currency",
+    "history": "History"
+  },
+  "settings": {
+    "darkTheme": "Dark theme",
+    "offlineMode": "Offline mode",
+    "language": "Language"
+  }
+}

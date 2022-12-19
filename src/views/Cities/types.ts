@@ -1,6 +1,6 @@
 export interface City {
   id: number;
-  name: Record<string, string>;
+  name: string;
   population: number;
   area: number;
   description: string;

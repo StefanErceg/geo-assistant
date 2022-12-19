@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
+import { useTranslation } from "react-i18next";
 import { SafeAreaView, View } from "react-native";
 import { Dropdown, DropdownItem } from "../../components/common/Dropdown";
 import { useSettings } from "../../context/settings/SettingsProvider";
@@ -17,25 +18,23 @@ const languages: DropdownItem[] = [
   },
 ];
 
-const selectLanguageLabel: { [key: string]: string } = {
-  sr: "Jezik",
-  en: "Language",
-};
-
 export default () => {
+  const { t, i18n } = useTranslation();
   const { darkMode, offlineMode, setDarkMode, setOfflineMode } = useSettings();
 
-  const [language, setLanguage] = useState(languages[0].value);
-
-  const label = selectLanguageLabel[language] || "language";
+  const setLanguage = (value: string) => i18n.changeLanguage(value);
 
   return (
     <SafeAreaView style={stylesheet.container}>
       <View style={stylesheet.settings}>
-        <SettingsSwitch value={darkMode} onChange={(value) => setDarkMode(value)} label="Dark theme" />
-        <SettingsSwitch value={offlineMode} onChange={(value) => setOfflineMode(value)} label="Offline mode" />
+        <SettingsSwitch value={darkMode} onChange={(value) => setDarkMode(value)} label={t("settings.darkTheme")} />
+        <SettingsSwitch
+          value={offlineMode}
+          onChange={(value) => setOfflineMode(value)}
+          label={t("settings.offlineMode")}
+        />
         <View style={{ width: "75%" }}>
-          <Dropdown label={label} value={language} setValue={setLanguage} list={languages} />
+          <Dropdown label={t("settings.language")} value={i18n.language} setValue={setLanguage} list={languages} />
         </View>
       </View>
     </SafeAreaView>

@@ -1,0 +1,25 @@
+{
+  "pages": {
+    "cities": "Gradovi",
+    "attractions": "Atrakcije",
+    "news": "Vesti",
+    "general": "Info",
+    "settings": "Podešavanja"
+  },
+  "city": {
+    "population": "Broj stanovnika",
+    "area": "Površina"
+  },
+  "general": {
+    "population": "Broj stanovnika",
+    "capital": "Glavni grad",
+    "language": "Jezik",
+    "currency": "Valuta",
+    "history": "Istorija"
+  },
+  "settings": {
+    "darkTheme": "Tamna tema",
+    "offlineMode": "Offline režim",
+    "language": "Jezik"
+  }
+}

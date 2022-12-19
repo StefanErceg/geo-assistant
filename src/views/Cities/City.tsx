@@ -9,8 +9,10 @@ import { Modal, Portal, Text, useTheme } from "react-native-paper";
 import { stylesheet } from "../../stylesheets";
 import { formatNumber } from "../../utils/format";
 import { City as CityType } from "./types";
+import { useTranslation } from "react-i18next";
 
 export const City: FC<CityType> = ({ name, description, population, area, imageUrl, youtubeVideoId }) => {
+  const { t } = useTranslation();
   const { colors } = useTheme();
 
   const [descriptionOpened, setDescriptionOpened] = useState(false);
@@ -28,18 +30,18 @@ export const City: FC<CityType> = ({ name, description, population, area, imageU
 
   return (
     <View style={{ ...stylesheet.cityItem, borderColor: colors.accent }}>
-      <Text style={{ ...stylesheet.cityName }}>{name}</Text>
+      <Text style={stylesheet.cityName}>{name}</Text>
       <View style={stylesheet.cityPopulation}>
         <Ionicons style={stylesheet.cityPopulationIcon} name="people-outline" size={24} color={colors.text} />
-        <Text style={{ ...stylesheet.cityDataLabel }}>Population: </Text>
+        <Text style={stylesheet.cityDataLabel}>{t("city.population")}: </Text>
         <Text>{formatNumber(population)}</Text>
       </View>
       <View style={stylesheet.cityArea}>
         <Ionicons style={stylesheet.cityAreaIcon} name="earth-outline" size={24} color={colors.text} />
-        <Text style={{ ...stylesheet.cityDataLabel }}>Area: </Text>
+        <Text style={stylesheet.cityDataLabel}>{t("city.area")}: </Text>
         <Text>{formatNumber(area)} km&sup2;</Text>
       </View>
-      {imageUrl ? <Image source={{ uri: imageUrl }} style={{ ...stylesheet.cityImage }} /> : null}
+      {imageUrl ? <Image source={{ uri: imageUrl }} style={stylesheet.cityImage} /> : null}
       <View style={stylesheet.cityDetails}>
         <Ionicons name="information-circle-outline" color={colors.text} size={36} onPress={openDescription} />
         <Ionicons
