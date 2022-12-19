@@ -1,3 +1,3 @@
 import { news } from "./news";
-
-export { news };
+import { weather } from "./weather";
+export { news, weather };
