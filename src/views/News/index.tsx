@@ -1,18 +1,17 @@
 import * as Network from "expo-network";
-import React, { FC, useEffect, useState } from "react";
-import { ActivityIndicator, Text, useTheme } from "react-native-paper";
-import { View, ScrollView, Image, FlatList, ListRenderItemInfo } from "react-native";
+import { Text } from "react-native-paper";
+import React, { useEffect, useState } from "react";
+import { View, Image, FlatList, ListRenderItemInfo } from "react-native";
 
 import { news } from "../../api";
 import { Article } from "./types";
-import { stylesheet } from "../../stylesheets";
 import { Loader } from "../../components/common/Loader";
 import { loadData, storeData } from "../../utils/persist";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { stylesheet, newsStylesheet } from "../../stylesheets";
 import { PERSISTED_ARTICLES, PERSISTED_PAGE } from "../../consts/news";
 
 const News = () => {
-  const { colors } = useTheme();
   const [articles, setArticles] = useState<Article[]>([]);
   const [totalArticles, setTotalArticles] = useState<number | null>(null);
   const [page, setPage] = useState(0);
@@ -79,9 +78,9 @@ const News = () => {
           renderItem={({ item: { title, urlToImage }, index }: ListRenderItemInfo<Article>) => {
             const imageSource = urlToImage ? { uri: urlToImage } : require("./news-placeholder.jpg");
             return (
-              <View style={stylesheet.newsItem} key={index}>
-                <Image source={imageSource} style={{ ...stylesheet.newsImage }} />
-                <Text style={{ ...stylesheet.newsTitle }}>{title}</Text>
+              <View style={newsStylesheet.newsItem} key={index}>
+                <Image source={imageSource} style={newsStylesheet.newsImage} />
+                <Text style={newsStylesheet.newsTitle}>{title}</Text>
               </View>
             );
           }}

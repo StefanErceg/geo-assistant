@@ -3,7 +3,7 @@ import { useTheme, Text } from "react-native-paper";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import { View, Image, TouchableOpacity, ScrollView } from "react-native";
 
-import { stylesheet } from "../../stylesheets";
+import { attractionsStylesheet } from "../../stylesheets";
 
 interface Props {
   id: number;
@@ -42,7 +42,7 @@ export const AttractionItem = ({
   return (
     <View
       style={{
-        ...stylesheet.attractionItem,
+        ...attractionsStylesheet.attractionItem,
         borderColor: colors.accent,
         backgroundColor: selectedAttraction === id ? "#333" : colors.background,
       }}
@@ -54,7 +54,7 @@ export const AttractionItem = ({
     >
       <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between" }}>
         <TouchableOpacity onPress={() => selectAttraction(id)}>
-          <Text style={{ ...stylesheet.attractionTitle }}>{name}</Text>
+          <Text style={{ ...attractionsStylesheet.attractionTitle }}>{name}</Text>
         </TouchableOpacity>
         <Ionicons
           name={`bookmark${selected ? "" : "-outline"}`}
@@ -63,9 +63,9 @@ export const AttractionItem = ({
           onPress={handleFavoritesClick}
         />
       </View>
-      <View style={stylesheet.attractionData}>
+      <View style={attractionsStylesheet.attractionData}>
         <TouchableOpacity onPress={() => selectAttraction(id)}>
-          <Text style={{ ...stylesheet.attractionDescription }}>{description}</Text>
+          <Text style={{ ...attractionsStylesheet.attractionDescription }}>{description}</Text>
         </TouchableOpacity>
         <ScrollView horizontal>
           {images?.map((imageSource, index) => (
@@ -76,7 +76,7 @@ export const AttractionItem = ({
                 height: 200,
                 width: 200,
               }}
-              style={stylesheet.attractionImage}
+              style={attractionsStylesheet.attractionImage}
             />
           ))}
         </ScrollView>

@@ -10,6 +10,12 @@
     "population": "Broj stanovnika",
     "area": "Površina"
   },
+  "weather": {
+    "temp": "Temperatura",
+    "feelsLike": "Subjektivni osećaj",
+    "humidity": "Vlažnost vazduha",
+    "windSpeed": "Brzina vetra"
+  },
   "general": {
     "population": "Broj stanovnika",
     "capital": "Glavni grad",

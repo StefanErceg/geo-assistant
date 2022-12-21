@@ -6,4 +6,8 @@ export interface City {
   description: string;
   imageUrl: string | null;
   youtubeVideoId: string | null;
+  coordinates: {
+    latitude: number;
+    longitude: number;
+  };
 }

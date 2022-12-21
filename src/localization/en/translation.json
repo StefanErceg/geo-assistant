@@ -10,6 +10,12 @@
     "population": "Population",
     "area": "Area"
   },
+  "weather": {
+    "temp": "Temperature",
+    "feelsLike": "Feels like",
+    "humidity": "Humidity",
+    "windSpeed": "Wind speed"
+  },
   "general": {
     "population": "Population",
     "capital": "Capital",

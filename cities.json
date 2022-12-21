@@ -6,7 +6,11 @@
     "area": 3222.6,
     "description": "Belgrade (/bɛlˈɡreɪd/ bel-GRAYD, /ˈbɛlɡreɪd/ BEL-grayd;[note 1] Serbian: Београд / Beograd, lit. 'White City', pronounced [beǒɡrad] names in other languages) is the capital and largest city in Serbia. It is located at the confluence of the Sava and Danube rivers and the crossroads of the Pannonian Plain and the Balkan Peninsula.[10] Nearly 2.5 million people live within the administrative limits of the City of Belgrade.[4] It is the third largest of all cities on the Danube river. Belgrade is one of the oldest continuously inhabited cities in Europe and the world. One of the most important prehistoric cultures of Europe, the Vinča culture, evolved within the Belgrade area in the 6th millennium BC. In antiquity, Thraco-Dacians inhabited the region and, after 279 BC, Celts settled the city, naming it Singidūn.[11] It was conquered by the Romans under the reign of Augustus and awarded Roman city rights in the mid-2nd century.[12] It was settled by the Slavs in the 520s, and changed hands several times between the Byzantine Empire, the Frankish Empire, the Bulgarian Empire, and the Kingdom of Hungary before it became the seat of the Serbian king Stefan Dragutin in 1284. Belgrade served as capital of the Serbian Despotate during the reign of Stefan Lazarević, and then his successor Đurađ Branković returned it to the Hungarian king in 1427. Noon bells in support of the Hungarian army against the Ottoman Empire during the siege in 1456 have remained a widespread church tradition to this day. In 1521, Belgrade was conquered by the Ottomans and became the seat of the Sanjak of Smederevo.[13] It frequently passed from Ottoman to Habsburg rule, which saw the destruction of most of the city during the Ottoman–Habsburg wars. In the period after the Serbian Revolution, Belgrade again was named the capital of Serbia in 1841. Northern Belgrade remained the southernmost Habsburg post until 1918, when it was attached to the city, due to former Austro-Hungarian territories becoming part of the new Kingdom of Serbs, Croats and Slovenes after World War I. Belgrade was the capital of Yugoslavia from its creation in 1918 to its dissolution in 2006.[note 2] In a fatally strategic position, the city has been battled over in 115 wars and razed 44 times, being bombed five times and besieged many times. Being Serbia's primate city, Belgrade has special administrative status within Serbia.[15] It is the seat of the central government, administrative bodies, and government ministries, as well as home of almost all of the largest Serbian companies, media, and scientific institutions. Belgrade is classified as a Beta-Global City.[16] The city is home to the Clinical Centre of Serbia, one of the hospital complexes with the largest capacity in the world, the Church of Saint Sava, one of the largest Orthodox church buildings, and the Štark Arena, one of the indoor arenas with the largest capacity in Europe. Belgrade hosted major international events such as the Danube River Conference of 1948, the first Non-Aligned Movement Summit (1961), the first major gathering of the OSCE (1977–1978), Eurovision Song Contest (2008), as well as sports events such as the first FINA World Aquatics Championships (1973), UEFA Euro (1976), Summer Universiade (2009) and EuroBasket three times (1961, 1975, 2005). ",
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d1/Belgrade_iz_balona.jpg",
-    "youtubeVideoId": "AkcHlmPWznA"
+    "youtubeVideoId": "AkcHlmPWznA",
+    "coordinates": {
+      "latitude": 44.8152453,
+      "longitude": 20.422597
+    }
   },
   {
     "id": 2,
@@ -15,78 +19,114 @@
     "area": 702.7,
     "description": "Novi Sad (Serbian Cyrillic: Нови Сад, pronounced [nôʋiː sâːd] Hungarian: Újvidék, pronounced [ˈuːjvideːk]; German: Neusatz; see below for other names) is the second largest city in Serbia and the capital of the autonomous province of Vojvodina. It is located in the southern portion of the Pannonian Plain on the border of the Bačka and Syrmia geographical regions. Lying on the banks of the Danube river, the city faces the northern slopes of Fruška Gora. According to the 2011 census, Novi Sad proper has a population of 231,798[3] while its urban area (including the adjacent settlements of Petrovaradin and Sremska Kamenica) comprises 277,522 inhabitants. The population of the administrative area of the city totals 341,625 people.Novi Sad was founded in 1694 when Serb merchants formed a colony across the Danube from the Petrovaradin Fortress, a strategic Habsburg military post. In subsequent centuries, it became an important trading, manufacturing and cultural centre, and has historically been dubbed the Serbian Athens.[5][6] The city was heavily devastated in the 1848 Revolution, but was subsequently rebuilt and restored. Today, along with the Serbian capital city of Belgrade, Novi Sad is an industrial and financial center important to the Serbian economy. Novi Sad is the European Capital of Culture for the year 2022[7] and was the European Youth Capital in 2019. ",
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a3/Panorama_Novovg_Sada_sa_zgrade_Radni%C4%8Dkog_Univerziteta_-_panoramio_%286%29.jpg",
-    "youtubeVideoId": "AkcHlmPWznA"
+    "youtubeVideoId": "ui552hw-NeQ",
+    "coordinates": {
+      "latitude": 45.267136,
+      "longitude": 19.833549
+    }
   },
   {
     "id": 3,
     "name": "Nis",
     "population": 1687132,
     "area": 596.73,
-    "description": "Niš (/ˈniːʃ/; Serbian Cyrillic: Ниш, Serbian pronunciation: [nîːʃ] names in other languages) is the third largest city in Serbia and the administrative center of the Nišava District. It is located in southern part of Serbia. According to the 2011 census, the city proper has a population of 183,164, while its administrative area (City of Niš) has a population of 260,237 inhabitants. Several Roman emperors were born in Niš or used it as a residence: Constantine the Great, the first Christian emperor and the founder of Constantinople, Constantius III, Constans, Vetranio, Julian, Valentinian I, Valens; and Justin I.[5] Emperor Claudius Gothicus decisively defeated the Goths at the Battle of Naissus (present-day Niš).[6] Later playing a prominent role in the history of the Byzantine Empire, the city's past would earn it the nickname Imperial City.",
+    "description": "Niš (/ˈniːʃ/; Serbian Cyrillic: Ниш, Serbian pronunciation:[nîːʃ] names in other languages) is the third largest city in Serbia and the administrative center of the Nišava District. It is located in southern part of Serbia. According to the 2011 census, the city proper has a population of 183,164, while its administrative area (City of Niš) has a population of 260,237 inhabitants. Several Roman emperors were born in Niš or used it as a residence: Constantine the Great, the first Christian emperor and the founder of Constantinople, Constantius III, Constans, Vetranio, Julian, Valentinian I, Valens; and Justin I.[5] Emperor Claudius Gothicus decisively defeated the Goths at the Battle of Naissus (present-day Niš).[6] Later playing a prominent role in the history of the Byzantine Empire, the city's past would earn it the nickname Imperial City.",
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6f/Nisgradnocu.jpg",
-    "youtubeVideoId": "AkcHlmPWznA"
+    "youtubeVideoId": "9QzqsaldtNM",
+    "coordinates": {
+      "latitude": 43.320904,
+      "longitude": 21.89576
+    }
   },
   {
     "id": 4,
     "name": "Kragujevac",
     "population": 1687132,
     "area": 835,
-    "description": "Kragujevac (Serbian Cyrillic: Крагујевац, pronounced [krǎɡujeʋats]) is the fourth largest city in Serbia and the administrative centre of the Šumadija District. It is the historical centre of the geographical region of Šumadija in central Serbia, and is situated on the banks of the Lepenica River. According to the 2011 census, the city proper has a population of 150,835, while its administrative area comprises a total of 179,417 inhabitants.Kragujevac was the first capital of modern Serbia and the first constitution in the Balkans, the Sretenje Constitution, was proclaimed in the city in 1838. A unit of the Scottish Women's Hospitals for Foreign Service was located there in World War I. During the Second World War, Kragujevac was the site of a massacre by the Nazis in which 2,778 Serb men and boys were killed. ",
+    "description": "Kragujevac (Serbian Cyrillic: Крагујевац, pronounced[krǎɡujeʋats]) is the fourth largest city in Serbia and the administrative centre of the Šumadija District. It is the historical centre of the geographical region of Šumadija in central Serbia, and is situated on the banks of the Lepenica River. According to the 2011 census, the city proper has a population of 150,835, while its administrative area comprises a total of 179,417 inhabitants.Kragujevac was the first capital of modern Serbia and the first constitution in the Balkans, the Sretenje Constitution, was proclaimed in the city in 1838. A unit of the Scottish Women's Hospitals for Foreign Service was located there in World War I. During the Second World War, Kragujevac was the site of a massacre by the Nazis in which 2,778 Serb men and boys were killed. ",
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/6/63/Night-view-on-city-hall1.jpg",
-    "youtubeVideoId": null
+    "youtubeVideoId": "OEJH7mfDPz4",
+    "coordinates": {
+      "latitude": 44.0130251,
+      "longitude": 20.91925
+    }
   },
   {
     "id": 5,
     "name": "Subotica",
     "population": 1687132,
     "area": 1007.47,
-    "description": "Subotica (Serbian Cyrillic: Суботица, pronounced [sǔbotitsa]) is a city and the administrative center of the North Bačka District in the autonomous province of Vojvodina, Serbia. Formerly the largest city of Vojvodina region, contemporary Subotica is now the second largest city in the province, following the city of Novi Sad. According to the 2011 census, the city itself has a population of 97,910, while the urban area of Subotica (with adjacent urban settlement of Palić included) has 105,681 inhabitants, and the population of metro area (the administrative area of the city) stands at 141,554 people.",
+    "description": "Subotica (Serbian Cyrillic: Суботица, pronounced[sǔbotitsa]) is a city and the administrative center of the North Bačka District in the autonomous province of Vojvodina, Serbia. Formerly the largest city of Vojvodina region, contemporary Subotica is now the second largest city in the province, following the city of Novi Sad. According to the 2011 census, the city itself has a population of 97,910, while the urban area of Subotica (with adjacent urban settlement of Palić included) has 105,681 inhabitants, and the population of metro area (the administrative area of the city) stands at 141,554 people.",
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a3/%D0%A1%D1%83%D0%B1%D0%BE%D1%82%D0%B8%D1%86%D0%B0.jpg",
-    "youtubeVideoId": "AkcHlmPWznA"
+    "youtubeVideoId": "zB-4q5djE7w",
+    "coordinates": {
+      "latitude": 46.1002058,
+      "longitude": 19.6653273
+    }
   },
   {
     "id": 6,
     "name": "Leskovac",
     "population": 144206,
     "area": 1025,
-    "description": "Leskovac (Serbian Cyrillic: Лесковац, pronounced [lě̞skɔ̝v̞at͡s]) is a city and the administrative center of the Jablanica District in southern Serbia. According to the 2016 census, the city urban area has 63,964 inhabitants, while the city administrative area has 144,632. Leskovac was historically called Glubočica, later evolving into Dubočica. These interchangeable variants derived from the Serbian word's, glib, meaning mud and duboko, meaning deep. Untamed rivers would often flood the area leaving swamps that once dried would spout hazelnut trees, or leska in Serbian, whilst vac is a common Slavic suffix, hence Leskovac. During Ottoman rule the town was referred to in Turkish as Leskovçe or Hisar (Turkish translation; fortress).",
-    "imageUrl": "",
-    "youtubeVideoId": ""
+    "description": "Leskovac (Serbian Cyrillic: Лесковац, pronounced[lě̞skɔ̝v̞at͡s]) is a city and the administrative center of the Jablanica District in southern Serbia. According to the 2016 census, the city urban area has 63,964 inhabitants, while the city administrative area has 144,632. Leskovac was historically called Glubočica, later evolving into Dubočica. These interchangeable variants derived from the Serbian word's, glib, meaning mud and duboko, meaning deep. Untamed rivers would often flood the area leaving swamps that once dried would spout hazelnut trees, or leska in Serbian, whilst vac is a common Slavic suffix, hence Leskovac. During Ottoman rule the town was referred to in Turkish as Leskovçe or Hisar (Turkish translation; fortress).",
+    "imageUrl": "https://www.juznevesti.com/uploads/assets/2015/10/06/53703/800x600_490x370-Kulturni-centar-Leskovac.jpg",
+    "youtubeVideoId": "g4GSG5Fqy8Y",
+    "coordinates": {
+      "latitude": 42.9951304,
+      "longitude": 21.9464271
+    }
   },
   {
     "id": 7,
     "name": "Zrenjanin",
     "population": 123362,
     "area": 1324,
-    "description": "",
-    "imageUrl": "",
-    "youtubeVideoId": ""
+    "description": "Zrenjanin (Serbian Cyrillic: Зрењанин, pronounced [zrɛ̌ɲanin]; Hungarian: Nagybecskerek; Romanian: Becicherecu Mare; Slovak: Zreňanin; German: Großbetschkerek) is a city and the administrative center of the Central Banat District in the autonomous province of Vojvodina, Serbia. The city urban area has a population of 76,511 inhabitants, while the city administrative area has 123,362 inhabitants (2011 census data). The old name for Zrenjanin is Veliki Bečkerek or Nagybecskerek as it was known under Austria-Hungary up until 1918.Zrenjanin is the largest city in the Serbian part of the Banat geographical region, and the third largest city in Vojvodina (after Novi Sad and Subotica). The city was designated European city of sport. ",
+    "imageUrl": "https://banjeusrbiji.com/wp-content/uploads/2014/10/zrenjanin.jpg",
+    "youtubeVideoId": "T_hyTYGdLMY",
+    "coordinates": {
+      "latitude": 45.3802683,
+      "longitude": 20.3907614
+    }
   },
   {
     "id": 8,
     "name": "Kraljevo",
     "population": 125448,
     "area": 1530,
-    "description": "",
-    "imageUrl": "",
-    "youtubeVideoId": ""
+    "description": "Kraljevo (Serbian Cyrillic: Краљево, pronounced [krǎːʎɛʋɔ] (listen)) is a city and the administrative center of the Raška District in central Serbia. It is situated on the confluence of West Morava and Ibar, in the geographical region of Šumadija, between the mountains of Kotlenik in the north, and Stolovi in the south. In 2011 the city urban area has a population of 68,749 inhabitants, while the city administrative area has 125,488 inhabitants. With an area of 1530 km², it is the largest municipality (after Belgrade) in Serbia by area. ",
+    "imageUrl": "https://www.serbia.travel/files/3-KRALJEVO-0-1280x768.jpg",
+    "youtubeVideoId": "P4e19yUcgfY",
+    "coordinates": {
+      "latitude": 43.7234519,
+      "longitude": 20.6870792
+    }
   },
   {
     "id": 9,
     "name": "Kruševac",
     "population": 128752,
     "area": 854,
-    "description": "",
-    "imageUrl": "",
-    "youtubeVideoId": ""
+    "description": "Kruševac is a city and the administrative center of the Rasina District in central Serbia. It is located in the valley of West Morava, on Rasina river. According to the 2011 census, the city administrative area has a population of 136,752 while the urban area has 81,316 inhabitants.The city was founded in 1371, by Prince Lazar of Serbia (1371–1389), who used it as his seat. ",
+    "imageUrl": "https://www.10naj.com/wp-content/uploads/2018/02/krusevac_naslovna-759x500.jpg",
+    "youtubeVideoId": "GATw8b1JT58",
+    "coordinates": {
+      "latitude": 43.58264,
+      "longitude": 21.3264811
+    }
   },
   {
     "id": 10,
     "name": "Valjevo",
     "population": 90312,
     "area": 905,
-    "description": "",
-    "imageUrl": "",
-    "youtubeVideoId": ""
+    "description": "Valjevo je grad u Srbiji, sedište Kolubarskog upravnog okruga. Nalazi se u Zapadnoj Srbiji, u Kolubarskom okrugu, na nepunih 100km jugozapadno od Beograda. Gradsko jezgro smešteno je u kotlini kroz koju protiče reka Kolubara. Valjevo spada među veća i razvijenija naselja u Srbiji. Prema popisu iz 2011. godine, grad Valjevo ima 59.073 stanovnika, a cela opština Valjevo ima 90.312. Nalazi se na prosečnoj nadmorskoj visini od 185m. Tokom istorije srpskog naroda Valjevci su često imali istaknutu ulogu u pokretima za nacionalno oslobođenje, ali, pored vojskovođa i narodnih vođa, znatan je i broj značajnih književnika, umetnika i naučnika poreklom iz Valjeva. Istovremeno, ovaj grad se svrstava i među najstarija gradska naselja Srbije. Ime Valjevo se po prvi put sreće u jednom dokumentu sačuvanom u Historijskom arhivu u Dubrovniku, a datiranom na 1393. godinu. Od tada naselje ima šest stotina godina potvrđenog kontinuiranog postojanja. Tokom vekova je grad doživljavao uspone i padove u njegovom istorijskom razvoju. U prošlim vremenima, prolazeći kroz ove krajeve različiti putopisci su Valjevo nazivali, gradom, varošju, kasabom, pa i selom. Naravno, reč je o stanju koje su oni u trenutku svog prolaska kroz valjevsku kotlinu zaticali na terenu, kao i odrednicama zasnovanim na iskustvu stečenom u kulturama iz kojih su ponikli, ali, u mnogim slučajevima, može biti i reč o terminologiji koja se tokom vremena menjala, označavajući u određenom periodu jedan, a kasnije drugi pojam. ",
+    "imageUrl": "https://www.serbiaincoming.com/wp-content/uploads/2018/08/Valjevo-walking-area.jpg",
+    "youtubeVideoId": "WSOWeqsQQ2k",
+    "coordinates": {
+      "latitude": 44.2708719,
+      "longitude": 19.8863297
+    }
   }
 ]

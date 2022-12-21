@@ -1,5 +1,6 @@
 import axios from "axios";
 import { OPEN_WEATHER_API_KEY, OPEN_WEATHER_API_URL, OPEN_WEATHER_STATE_ID } from "@env";
+import { WeatherResponse } from "../types/weather";
 
 const http = axios.create({
   baseURL: OPEN_WEATHER_API_URL,
@@ -24,13 +25,9 @@ export const weather = {
       `geo/1.0/direct?q=${city},${OPEN_WEATHER_STATE_ID}&limit=1&appid=${OPEN_WEATHER_API_KEY}`
     );
     const { lat, lon } = data[0] || {};
-    const { data: weather } = await http.get(
-      `data/2.5/weather?lat=${lat}&lon=${lon}&lang=${lang}&appid=${OPEN_WEATHER_API_KEY}`
+    const { data: weather } = await http.get<WeatherResponse>(
+      `data/2.5/weather?lat=${lat}&lon=${lon}&lang=${lang}&appid=${OPEN_WEATHER_API_KEY}&units=metric`
     );
-    console.log(weather);
-  },
-
-  getWeatherIcon(iconId: string) {
-    return http.get(`img/w/${iconId}.png`);
+    return weather;
   },
 };
