@@ -10,6 +10,7 @@ import { loadData, storeData } from "../../utils/persist";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { stylesheet, newsStylesheet } from "../../stylesheets";
 import { PERSISTED_ARTICLES, PERSISTED_PAGE } from "../../consts/news";
+import { useSettings } from "../../context/settings/SettingsProvider";
 
 const News = () => {
   const [articles, setArticles] = useState<Article[]>([]);
@@ -17,6 +18,8 @@ const News = () => {
   const [page, setPage] = useState(0);
   const [isOnline, setIsOnline] = useState(false);
   const [loaded, setLoaded] = useState(false);
+
+  const { offlineMode } = useSettings();
 
   const pageSize = 10;
 
@@ -29,7 +32,7 @@ const News = () => {
 
   useEffect(() => {
     if (isOnline) loadNews();
-    loadNewsFromStore();
+    if (offlineMode) loadNewsFromStore();
   }, [page, isOnline]);
 
   const loadNews = async () => {
