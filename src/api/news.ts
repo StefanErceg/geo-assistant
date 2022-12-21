@@ -1,14 +1,14 @@
 import axios from "axios";
-import settings from "../settings.json";
 import { Article } from "../views/News/types";
+import { NEWS_API_URL, NEWS_API_KEY } from "@env";
 
 const http = axios.create({
-  baseURL: settings.newsUrl,
+  baseURL: NEWS_API_URL,
 });
 
 http.interceptors.request.use((config) => {
   config.headers = {
-    "X-Api-Key": settings.newsApiKey,
+    "X-Api-Key": NEWS_API_KEY,
   };
   return config;
 });
