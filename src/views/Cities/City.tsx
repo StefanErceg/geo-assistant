@@ -12,7 +12,7 @@ import { formatNumber } from "../../utils/format";
 import { WeatherModal } from "../../components/WeatherModal";
 import { citiesStylesheet, stylesheet } from "../../stylesheets";
 
-export const City: FC<CityType> = ({ name, description, population, area, imageUrl, youtubeVideoId, coordinates }) => {
+export const City: FC<CityType> = ({ name, description, population, area, images, youtubeVideoId, coordinates }) => {
   const { t } = useTranslation();
   const { colors } = useTheme();
 
@@ -50,7 +50,20 @@ export const City: FC<CityType> = ({ name, description, population, area, imageU
         <Text style={citiesStylesheet.cityDataLabel}>{t("city.area")}: </Text>
         <Text>{formatNumber(area)} km&sup2;</Text>
       </View>
-      {imageUrl ? <Image source={{ uri: imageUrl }} style={citiesStylesheet.cityImage} /> : null}
+
+      <ScrollView horizontal>
+        {images?.map((imageSource, index) => (
+          <Image
+            key={index}
+            source={{
+              uri: imageSource,
+              height: 200,
+              width: 250,
+            }}
+            style={citiesStylesheet.cityImage}
+          />
+        ))}
+      </ScrollView>
       <View style={citiesStylesheet.cityDetails}>
         <Ionicons name="information-circle-outline" color={colors.text} size={36} onPress={openDescription} />
         <Ionicons

@@ -29,10 +29,9 @@ export const citiesStylesheet = StyleSheet.create({
 
   cityImage: {
     resizeMode: "cover",
-    width: "100%",
-    height: 200,
     borderRadius: 6,
     marginTop: 10,
+    marginRight: 10,
   },
 
   cityDataLabel: {
@@ -54,7 +53,7 @@ export const citiesStylesheet = StyleSheet.create({
   cityDetails: {
     width: "100%",
     display: "flex",
-    marginTop: 20,
+    marginBottom: 30,
     paddingHorizontal: 20,
     flexDirection: "row",
     justifyContent: "space-between",

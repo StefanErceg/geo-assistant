@@ -4,7 +4,7 @@ export interface City {
   population: number;
   area: number;
   description: string;
-  imageUrl: string | null;
+  images: string[];
   youtubeVideoId: string | null;
   coordinates: {
     latitude: number;
