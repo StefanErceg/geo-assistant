@@ -1,8 +1,9 @@
 import React from "react";
-import { Dimensions, useWindowDimensions } from "react-native";
-import MapView, { Marker } from "react-native-maps";
-import { mapRegion } from "../../mock/general";
+import { useWindowDimensions } from "react-native";
+import MapView, { Marker, PROVIDER_GOOGLE } from "react-native-maps";
+
 import { Attraction } from "./types";
+import { mapRegion } from "../../mock/general";
 
 interface Props {
   attractions: Attraction[];
@@ -16,6 +17,7 @@ export const AttractionsMap = ({ attractions, selectedAttraction, selectAttracti
   const landscape = height < width;
   return (
     <MapView
+      provider={PROVIDER_GOOGLE}
       style={{
         height: landscape ? height : height / 3,
         width: landscape ? width / 3 : width - 40,

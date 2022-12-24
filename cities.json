@@ -94,6 +94,7 @@
     "area": 1025,
     "description": "Leskovac (Serbian Cyrillic: Лесковац, pronounced[lě̞skɔ̝v̞at͡s]) is a city and the administrative center of the Jablanica District in southern Serbia. According to the 2016 census, the city urban area has 63,964 inhabitants, while the city administrative area has 144,632. Leskovac was historically called Glubočica, later evolving into Dubočica. These interchangeable variants derived from the Serbian word's, glib, meaning mud and duboko, meaning deep. Untamed rivers would often flood the area leaving swamps that once dried would spout hazelnut trees, or leska in Serbian, whilst vac is a common Slavic suffix, hence Leskovac. During Ottoman rule the town was referred to in Turkish as Leskovçe or Hisar (Turkish translation; fortress).",
     "images": [
+      "https://biznis.rs/wp-content/uploads/2020/11/panorama-leskovac-640x363.jpg",
       "https://www.juznevesti.com/uploads/assets/2015/10/06/53703/800x600_490x370-Kulturni-centar-Leskovac.jpg"
     ],
     "youtubeVideoId": "g4GSG5Fqy8Y",
@@ -108,7 +109,10 @@
     "population": 123362,
     "area": 1324,
     "description": "Zrenjanin (Serbian Cyrillic: Зрењанин, pronounced [zrɛ̌ɲanin]; Hungarian: Nagybecskerek; Romanian: Becicherecu Mare; Slovak: Zreňanin; German: Großbetschkerek) is a city and the administrative center of the Central Banat District in the autonomous province of Vojvodina, Serbia. The city urban area has a population of 76,511 inhabitants, while the city administrative area has 123,362 inhabitants (2011 census data). The old name for Zrenjanin is Veliki Bečkerek or Nagybecskerek as it was known under Austria-Hungary up until 1918.Zrenjanin is the largest city in the Serbian part of the Banat geographical region, and the third largest city in Vojvodina (after Novi Sad and Subotica). The city was designated European city of sport. ",
-    "images": ["https://banjeusrbiji.com/wp-content/uploads/2014/10/zrenjanin.jpg"],
+    "images": [
+      "https://banjeusrbiji.com/wp-content/uploads/2014/10/zrenjanin.jpg",
+      "https://bookaweb.s3.eu-central-1.amazonaws.com/media/23851/responsive-images/Zrenjanin___media_library_original_2000_1300.jpg"
+    ],
     "youtubeVideoId": "T_hyTYGdLMY",
     "coordinates": {
       "latitude": 45.3802683,
@@ -121,7 +125,10 @@
     "population": 125448,
     "area": 1530,
     "description": "Kraljevo (Serbian Cyrillic: Краљево, pronounced [krǎːʎɛʋɔ] (listen)) is a city and the administrative center of the Raška District in central Serbia. It is situated on the confluence of West Morava and Ibar, in the geographical region of Šumadija, between the mountains of Kotlenik in the north, and Stolovi in the south. In 2011 the city urban area has a population of 68,749 inhabitants, while the city administrative area has 125,488 inhabitants. With an area of 1530 km², it is the largest municipality (after Belgrade) in Serbia by area. ",
-    "images": ["https://www.serbia.travel/files/3-KRALJEVO-0-1280x768.jpg"],
+    "images": [
+      "https://www.serbia.travel/files/3-KRALJEVO-0-1280x768.jpg",
+      "https://bookaweb.s3.eu-central-1.amazonaws.com/media/23865/responsive-images/RS_Kraljevo_DJI_0822-%281%29___media_library_original_2000_1300.jpg"
+    ],
     "youtubeVideoId": "P4e19yUcgfY",
     "coordinates": {
       "latitude": 43.7234519,

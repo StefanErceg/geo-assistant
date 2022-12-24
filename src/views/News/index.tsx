@@ -78,12 +78,13 @@ const News = () => {
         <FlatList
           data={articles}
           keyExtractor={(_, index) => index.toString()}
-          renderItem={({ item: { title, urlToImage }, index }: ListRenderItemInfo<Article>) => {
+          renderItem={({ item: { title, urlToImage, description }, index }: ListRenderItemInfo<Article>) => {
             const imageSource = urlToImage ? { uri: urlToImage } : require("./news-placeholder.jpg");
             return (
               <View style={newsStylesheet.newsItem} key={index}>
                 <Image source={imageSource} style={newsStylesheet.newsImage} />
                 <Text style={newsStylesheet.newsTitle}>{title}</Text>
+                <Text style={newsStylesheet.description}>{description}</Text>
               </View>
             );
           }}

@@ -1,11 +1,10 @@
 import React, { FC, useState } from "react";
-
-import MapView from "react-native-maps";
 import { useTranslation } from "react-i18next";
 import YouTubePlayer from "react-native-youtube-iframe";
 import Ionicons from "react-native-vector-icons/Ionicons";
-import { View, Image, ScrollView, Dimensions, useWindowDimensions } from "react-native";
+import MapView, { PROVIDER_GOOGLE } from "react-native-maps";
 import { Modal, Portal, Text, useTheme } from "react-native-paper";
+import { View, Image, ScrollView, Dimensions, useWindowDimensions } from "react-native";
 
 import { City as CityType } from "./types";
 import { formatNumber } from "../../utils/format";
@@ -112,6 +111,7 @@ export const City: FC<CityType> = ({ name, description, population, area, images
       <Portal>
         <Modal visible={mapsOpened} onDismiss={closeMaps} contentContainerStyle={stylesheet.mapModal}>
           <MapView
+            provider={PROVIDER_GOOGLE}
             style={{ height: Dimensions.get("screen").height - 300, width: Dimensions.get("screen").width - 50 }}
             initialRegion={{
               latitude,

@@ -2,9 +2,7 @@ import { StyleSheet } from "react-native";
 
 export const newsStylesheet = StyleSheet.create({
   newsItem: {
-    justifyContent: "center",
-    alignItems: "center",
-    textAlign: "justify",
+    alignItems: "stretch",
     marginVertical: 20,
     paddingVertical: 10,
     marginLeft: 2,
@@ -15,8 +13,17 @@ export const newsStylesheet = StyleSheet.create({
   },
 
   newsTitle: {
-    padding: 10,
-    fontSize: 16,
+    fontSize: 18,
+    textAlign: "justify",
+    paddingHorizontal: 10,
+    paddingVertical: 5,
+  },
+
+  description: {
+    fontSize: 12,
+    textAlign: "justify",
+    paddingHorizontal: 10,
+    paddingVertical: 5,
   },
 
   newsImage: {
@@ -24,6 +31,8 @@ export const newsStylesheet = StyleSheet.create({
     width: 320,
     height: 240,
     borderRadius: 6,
+    marginLeft: "auto",
+    marginRight: "auto",
   },
 
   loaderContainer: {
