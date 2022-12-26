@@ -49,19 +49,19 @@ export const WeatherModal = ({ city, visible, onClose }: Props) => {
           <View>
             <View style={stylesheet.weatherItem}>
               <Text>{t("weather.feelsLike")}</Text>
-              <Text>{weatherData.main?.feels_like}</Text>
+              <Text>{weatherData.main?.feels_like}&#8451;</Text>
             </View>
             <View style={stylesheet.weatherItem}>
               <Text>{t("weather.temp")}</Text>
-              <Text>{weatherData.main?.temp}</Text>
+              <Text>{weatherData.main?.temp}&#8451;</Text>
             </View>
             <View style={stylesheet.weatherItem}>
               <Text>{t("weather.humidity")}</Text>
-              <Text>{weatherData.main?.humidity}</Text>
+              <Text>{weatherData.main?.humidity}%</Text>
             </View>
             <View style={stylesheet.weatherItem}>
               <Text>{t("weather.windSpeed")}</Text>
-              <Text>{weatherData.wind?.speed}</Text>
+              <Text>{weatherData.wind?.speed} km/h</Text>
             </View>
           </View>
         )}
