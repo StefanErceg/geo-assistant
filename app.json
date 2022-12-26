@@ -24,13 +24,25 @@
           "apiKey": "AIzaSyBOAicaZm8FBLFTQkdUHEWu2CSaRDC3Aho"
         }
       },
+      "blockedPermissions": [
+        "android.permission.READ_CONTACTS",
+        "android.permission.RECORD_AUDIO",
+        "android.permission.CAMERA",
+        "android.permission.READ_PHONE_STATE"
+      ],
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "com.unibl.etf.serbiatour"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "4b954f0b-87ac-425f-81b0-274b9a5d4a5f"
+      }
     }
   }
 }
